@@ -13,6 +13,15 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.0
 
+  # Mantain application state
+  shared_preferences: ^0.5.12
+
+  # Library to make http requests
+  dio: ^3.0.10
+  
+  # Google fonts
+  google_fonts: ^1.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
