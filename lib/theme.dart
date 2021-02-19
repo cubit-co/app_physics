@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PhysicsTheme {
-  static const PRIMARY_COLOR = Color(0xff1463a6);
-  static const PRIMARY_COLOR_DARK = Color(0xff2C353D);
+  static const PRIMARY_COLOR = Color(0xff292758);
+  static const PRIMARY_COLOR_DARK = Color(0xff343434);
   static const ACCENT_COLOR = Color(0xfff8d836);
   static const DANGER_COLOR = Color(0xffe36868);
 

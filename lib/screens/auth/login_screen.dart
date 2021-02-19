@@ -78,13 +78,13 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 30.0),
-          //   child: Image.asset(
-          //     'assets/images/logos/app-logo.png',
-          //     fit: BoxFit.contain,
-          //   ),
-          // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Image.asset(
+              'assets/images/logo.png',
+              fit: BoxFit.contain,
+            ),
+          ),
           SizedBox(height: CONTROLS_SPACING),
           TextFormField(
             validator: _emailValidator,
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
               prefixIcon: Icon(Icons.account_circle),
             ),
             onChanged: (value) {
-              _email = value;
+              _email = value.trim().toLowerCase();
             },
             onFieldSubmitted: (value) => _login(),
           ),
@@ -106,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             width: double.infinity,
             child: RaisedButton(
-              color: Theme.of(context).primaryColorDark,
+              color: Theme.of(context).primaryColor,
               textColor: Colors.white,
               onPressed: _isLoading ? null : _login,
               child: _isLoading
@@ -150,21 +150,26 @@ class _LoginScreenState extends State<LoginScreen> {
     if (!isValidForm) return;
 
     bool loggedIn = false;
-
+    String number;
     try {
-      await Future.delayed(Duration(seconds: 1));
-      loggedIn = await authService.login(_email);
+      number = await authService.login(_email);
+      if (number != null) {
+        loggedIn = true;
+      }
       setState(() {
         _isLoading = false;
       });
-    } catch (e) {}
-
-    setState(() {
-      _isLoading = false;
-    });
+    } catch (e) {
+      print(e);
+      setState(() {
+        _isLoading = false;
+      });
+    }
 
     if (loggedIn) {
-      Navigator.of(context).popAndPushNamed(RouteNames.HOME);
+      Navigator.of(context).pushNamed(RouteNames.VALIDATE, arguments: number);
+    } else {
+      Navigator.of(context).pushNamed(RouteNames.REGISTER, arguments: _email);
     }
   }
 }

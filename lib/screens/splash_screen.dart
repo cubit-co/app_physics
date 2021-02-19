@@ -27,6 +27,6 @@ class _SplashScreenState extends State<SplashScreen> {
     final isLoggedIn = await authService.isLogin();
 
     Navigator.of(context)
-        .popAndPushNamed(isLoggedIn ? RouteNames.LOGIN : RouteNames.LOGIN);
+        .popAndPushNamed(isLoggedIn ? RouteNames.HOME : RouteNames.LOGIN);
   }
 }

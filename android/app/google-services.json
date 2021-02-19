@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1060735235148",
+    "firebase_url": "https://physics-83ff8.firebaseio.com",
+    "project_id": "physics-83ff8",
+    "storage_bucket": "physics-83ff8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060735235148:android:f085fbd8d2d8958ebb70e9",
+        "android_client_info": {
+          "package_name": "co.com.cubit.physics.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060735235148-g5abaff154t6rl5u3qa4edckvps1u111.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr2KE2uOvml-U8oiuz95_tRXgIcieb1q0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060735235148-g5abaff154t6rl5u3qa4edckvps1u111.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
